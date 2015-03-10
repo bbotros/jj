@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-static-top  ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:dodgerblue">
+                    <span class="icon-bar glyphicon  glyphicon-minus"></span>
+                    <span class="icon-bar glyphicon glyphicon-minus"></span>
+                    <span class="icon-bar glyphicon glyphicon-minus"></span>
+
+                </button>
+                <a href=@Url.Action( "Index", "Home", new { area = "" })>
+                    <img class="navbar-brand" src="~/Images/FrontPage/Logo/logo.png" width="200px" height="300px" style="background-color:dodgerblue">
+
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs " style="height:60px">
+        <!--Department menu-->
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                Shop by Department <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li>dep1</li>
+                <li>dep2</li>
+            </ul>
+        </li>
+        <!--search bar-->
+        <li role="presentation">
+            <form action="/" method="post" class="navbar-form form-inline " style="float:right;width:auto;">
+                <div>
+                    <ul class="list-inline">
+                        <li><label class="inputsearch">Search</label></li>
+                        <li><label style="color:white">..</label></li>
+                        <li>
+                            <select class="inputsearch">
+                                <option selected>All</option>
+                                <option>cat1</option>
+                                <option>cat2</option>
+                            </select>
+                        </li>
+                        <li><input type="search" autocomplete="on" class="inputsearch " style="width:500px" /></li>
+                        <li><button type="submit" class="inputsearch">Go</button></li>
+                    </ul>
+                </div>
+            </form>
+
+        </li>
+        <!--account menu-->
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                Your Account <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li>orders</li>
+                <li>manage account</li>
+            </ul>
+        </li>
+        <!--shopping cart menu-->
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                Cart <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li>view</li>
+                <li>checkout</li>
+            </ul>
+        </li>
+
+    </ul>
+
+    <div class="container body-content">
+        <br />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - J &amp; J Manufacturer &amp; Sales Inc.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

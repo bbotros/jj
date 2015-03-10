@@ -1,0 +1,444 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://jsonschema.net",
+  "type": "array",
+  "items": [
+    {
+      "id": "http://jsonschema.net/0",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "http://jsonschema.net/0/id",
+          "type": "integer"
+        },
+        "label": {
+          "id": "http://jsonschema.net/0/label",
+          "type": "string"
+        },
+        "inode": {
+          "id": "http://jsonschema.net/0/inode",
+          "type": "boolean"
+        },
+        "open": {
+          "id": "http://jsonschema.net/0/open",
+          "type": "boolean"
+        },
+        "branch": {
+          "id": "http://jsonschema.net/0/branch",
+          "type": "array",
+          "items": [
+            {
+              "id": "http://jsonschema.net/0/branch/0",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "http://jsonschema.net/0/branch/0/id",
+                  "type": "integer"
+                },
+                "label": {
+                  "id": "http://jsonschema.net/0/branch/0/label",
+                  "type": "string"
+                },
+                "inode": {
+                  "id": "http://jsonschema.net/0/branch/0/inode",
+                  "type": "boolean"
+                },
+                "my-hash": {
+                  "id": "http://jsonschema.net/0/branch/0/my-hash",
+                  "type": "string"
+                },
+                "my-url": {
+                  "id": "http://jsonschema.net/0/branch/0/my-url",
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "id": "http://jsonschema.net/0/branch/1",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "http://jsonschema.net/0/branch/1/id",
+                  "type": "integer"
+                },
+                "label": {
+                  "id": "http://jsonschema.net/0/branch/1/label",
+                  "type": "string"
+                },
+                "inode": {
+                  "id": "http://jsonschema.net/0/branch/1/inode",
+                  "type": "boolean"
+                },
+                "my-hash": {
+                  "id": "http://jsonschema.net/0/branch/1/my-hash",
+                  "type": "string"
+                },
+                "my-url": {
+                  "id": "http://jsonschema.net/0/branch/1/my-url",
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "id": "http://jsonschema.net/0/branch/2",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "http://jsonschema.net/0/branch/2/id",
+                  "type": "integer"
+                },
+                "label": {
+                  "id": "http://jsonschema.net/0/branch/2/label",
+                  "type": "string"
+                },
+                "inode": {
+                  "id": "http://jsonschema.net/0/branch/2/inode",
+                  "type": "boolean"
+                },
+                "my-hash": {
+                  "id": "http://jsonschema.net/0/branch/2/my-hash",
+                  "type": "string"
+                },
+                "my-url": {
+                  "id": "http://jsonschema.net/0/branch/2/my-url",
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "id": "http://jsonschema.net/0/branch/3",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "http://jsonschema.net/0/branch/3/id",
+                  "type": "integer"
+                },
+                "label": {
+                  "id": "http://jsonschema.net/0/branch/3/label",
+                  "type": "string"
+                },
+                "inode": {
+                  "id": "http://jsonschema.net/0/branch/3/inode",
+                  "type": "boolean"
+                },
+                "my-hash": {
+                  "id": "http://jsonschema.net/0/branch/3/my-hash",
+                  "type": "string"
+                },
+                "my-url": {
+                  "id": "http://jsonschema.net/0/branch/3/my-url",
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "my-hash": {
+          "id": "http://jsonschema.net/0/my-hash",
+          "type": "string"
+        },
+        "my-url": {
+          "id": "http://jsonschema.net/0/my-url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "inode",
+        "open",
+        "branch",
+        "my-hash",
+        "my-url"
+      ]
+    },
+    {
+      "id": "http://jsonschema.net/1",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "http://jsonschema.net/1/id",
+          "type": "integer"
+        },
+        "label": {
+          "id": "http://jsonschema.net/1/label",
+          "type": "string"
+        },
+        "inode": {
+          "id": "http://jsonschema.net/1/inode",
+          "type": "boolean"
+        },
+        "my-hash": {
+          "id": "http://jsonschema.net/1/my-hash",
+          "type": "string"
+        },
+        "my-url": {
+          "id": "http://jsonschema.net/1/my-url",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "id": "http://jsonschema.net/2",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "http://jsonschema.net/2/id",
+          "type": "integer"
+        },
+        "label": {
+          "id": "http://jsonschema.net/2/label",
+          "type": "string"
+        },
+        "inode": {
+          "id": "http://jsonschema.net/2/inode",
+          "type": "boolean"
+        },
+        "open": {
+          "id": "http://jsonschema.net/2/open",
+          "type": "boolean"
+        },
+        "branch": {
+          "id": "http://jsonschema.net/2/branch",
+          "type": "array",
+          "items": [
+            {
+              "id": "http://jsonschema.net/2/branch/0",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "http://jsonschema.net/2/branch/0/id",
+                  "type": "integer"
+                },
+                "label": {
+                  "id": "http://jsonschema.net/2/branch/0/label",
+                  "type": "string"
+                },
+                "inode": {
+                  "id": "http://jsonschema.net/2/branch/0/inode",
+                  "type": "boolean"
+                },
+                "open": {
+                  "id": "http://jsonschema.net/2/branch/0/open",
+                  "type": "boolean"
+                },
+                "branch": {
+                  "id": "http://jsonschema.net/2/branch/0/branch",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http://jsonschema.net/2/branch/0/branch/0",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/0/id",
+                          "type": "integer"
+                        },
+                        "label": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/0/label",
+                          "type": "string"
+                        },
+                        "inode": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/0/inode",
+                          "type": "boolean"
+                        },
+                        "my-hash": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/0/my-hash",
+                          "type": "string"
+                        },
+                        "my-url": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/0/my-url",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "id": "http://jsonschema.net/2/branch/0/branch/1",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/1/id",
+                          "type": "integer"
+                        },
+                        "label": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/1/label",
+                          "type": "string"
+                        },
+                        "inode": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/1/inode",
+                          "type": "boolean"
+                        },
+                        "my-hash": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/1/my-hash",
+                          "type": "string"
+                        },
+                        "my-url": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/1/my-url",
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "id": "http://jsonschema.net/2/branch/0/branch/2",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/2/id",
+                          "type": "integer"
+                        },
+                        "label": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/2/label",
+                          "type": "string"
+                        },
+                        "inode": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/2/inode",
+                          "type": "boolean"
+                        },
+                        "my-hash": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/2/my-hash",
+                          "type": "string"
+                        },
+                        "my-url": {
+                          "id": "http://jsonschema.net/2/branch/0/branch/2/my-url",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "my-hash": {
+                  "id": "http://jsonschema.net/2/branch/0/my-hash",
+                  "type": "string"
+                },
+                "my-url": {
+                  "id": "http://jsonschema.net/2/branch/0/my-url",
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "id": "http://jsonschema.net/2/branch/1",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "http://jsonschema.net/2/branch/1/id",
+                  "type": "integer"
+                },
+                "label": {
+                  "id": "http://jsonschema.net/2/branch/1/label",
+                  "type": "string"
+                },
+                "inode": {
+                  "id": "http://jsonschema.net/2/branch/1/inode",
+                  "type": "boolean"
+                },
+                "my-hash": {
+                  "id": "http://jsonschema.net/2/branch/1/my-hash",
+                  "type": "string"
+                },
+                "my-url": {
+                  "id": "http://jsonschema.net/2/branch/1/my-url",
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "my-hash": {
+          "id": "http://jsonschema.net/2/my-hash",
+          "type": "string"
+        },
+        "my-url": {
+          "id": "http://jsonschema.net/2/my-url",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "id": "http://jsonschema.net/3",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "http://jsonschema.net/3/id",
+          "type": "integer"
+        },
+        "label": {
+          "id": "http://jsonschema.net/3/label",
+          "type": "string"
+        },
+        "inode": {
+          "id": "http://jsonschema.net/3/inode",
+          "type": "boolean"
+        },
+        "my-hash": {
+          "id": "http://jsonschema.net/3/my-hash",
+          "type": "string"
+        },
+        "my-url": {
+          "id": "http://jsonschema.net/3/my-url",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "id": "http://jsonschema.net/4",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "http://jsonschema.net/4/id",
+          "type": "integer"
+        },
+        "label": {
+          "id": "http://jsonschema.net/4/label",
+          "type": "string"
+        },
+        "inode": {
+          "id": "http://jsonschema.net/4/inode",
+          "type": "boolean"
+        },
+        "my-hash": {
+          "id": "http://jsonschema.net/4/my-hash",
+          "type": "string"
+        },
+        "my-url": {
+          "id": "http://jsonschema.net/4/my-url",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "id": "http://jsonschema.net/5",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "http://jsonschema.net/5/id",
+          "type": "integer"
+        },
+        "label": {
+          "id": "http://jsonschema.net/5/label",
+          "type": "string"
+        },
+        "inode": {
+          "id": "http://jsonschema.net/5/inode",
+          "type": "boolean"
+        },
+        "my-hash": {
+          "id": "http://jsonschema.net/5/my-hash",
+          "type": "string"
+        },
+        "my-url": {
+          "id": "http://jsonschema.net/5/my-url",
+          "type": "string"
+        }
+      }
+    }
+  ],
+  "required": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ]
+}
