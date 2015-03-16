@@ -1,0 +1,88 @@
+﻿@model JJTrailer.Library.Career
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Career</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jobCategory.JobCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobCategory.JobCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.jobLocatoin.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jobLocatoin.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatePosted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatePosted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StillAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StillAvailable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employmentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employmentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobQualification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobQualification)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

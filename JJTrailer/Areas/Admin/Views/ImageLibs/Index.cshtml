@@ -1,0 +1,68 @@
+﻿@model IEnumerable<JJTrailer.Library.ImageLib>
+
+@{
+    ViewBag.Title = "Image Manager";
+}
+
+<h2>Image Manager</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+    <div class="container">
+        <div class="row">
+           <div class="col-md-2">
+               <div id="tree" class="aciTree"></div>
+
+           </div>
+            <div class="col-md-8">
+
+            </div>
+        </div>
+    </div>
+
+
+       
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FilePath)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FileName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FilePath)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        @section scripts{
+
+            <script src="~/Scripts/Acitree/aciplugin.js"></script>
+
+            <script src="~/Scripts/Acitree/acitree.core.js"></script>
+            <script src="~/Scripts/Acitree/acitree.min.js"></script>
+<script src="~/Scripts/nano/nano.js"></script>
+<script src="~/Scripts/ImageLib-script/acitree-script.js"></script>
+<script src="~/Scripts/ImageLib-script/nano-script.js"></script>
+        }
+        @section uistyles{
+<link href="~/Content/nano.css" rel="stylesheet" />
+            <link href="~/Content/acitree.css" rel="stylesheet" />
+        }

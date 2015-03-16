@@ -12,7 +12,18 @@ namespace JJTrailer.Controllers
         {
             return View();
         }
-
+        public ActionResult Press()
+        {
+            return View();
+        }
+        public ActionResult Global()
+        {
+            return View();
+        }
+        public ActionResult GivingBack()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -26,5 +37,6 @@ namespace JJTrailer.Controllers
 
             return View();
         }
+        
     }
 }

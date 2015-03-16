@@ -187,13 +187,21 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AddressesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CareersController.cs" />
     <Compile Include="Areas\Admin\Controllers\CarouselsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DepartmentMenusController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DepartmentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ImageLibsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\JobCategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\JobLocationsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ResumesController.cs" />
     <Compile Include="Areas\Admin\Models\Default.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\jsonController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -220,6 +228,38 @@
     <Compile Include="Migrations\201503051550218_carousel-3.Designer.cs">
       <DependentUpon>201503051550218_carousel-3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503111615497_career.cs" />
+    <Compile Include="Migrations\201503111615497_career.Designer.cs">
+      <DependentUpon>201503111615497_career.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503111621023_career-2.cs" />
+    <Compile Include="Migrations\201503111621023_career-2.Designer.cs">
+      <DependentUpon>201503111621023_career-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503130345467_department.cs" />
+    <Compile Include="Migrations\201503130345467_department.Designer.cs">
+      <DependentUpon>201503130345467_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503130356279_department-2.cs" />
+    <Compile Include="Migrations\201503130356279_department-2.Designer.cs">
+      <DependentUpon>201503130356279_department-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503131827575_department-3.cs" />
+    <Compile Include="Migrations\201503131827575_department-3.Designer.cs">
+      <DependentUpon>201503131827575_department-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503131903254_departmentmenu.cs" />
+    <Compile Include="Migrations\201503131903254_departmentmenu.Designer.cs">
+      <DependentUpon>201503131903254_departmentmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503140047390_departmentmenu-2.cs" />
+    <Compile Include="Migrations\201503140047390_departmentmenu-2.Designer.cs">
+      <DependentUpon>201503140047390_departmentmenu-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503151747507_depmenu-image.cs" />
+    <Compile Include="Migrations\201503151747507_depmenu-image.Designer.cs">
+      <DependentUpon>201503151747507_depmenu-image.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -228,7 +268,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularApp\Animation.js" />
+    <Content Include="AngularApp\App.js" />
+    <Content Include="AngularApp\Controller.js" />
+    <Content Include="AngularApp\Filters.js" />
+    <Content Include="AngularApp\Services.js" />
+    <Content Include="AngularApp\Templates\template1.html" />
     <Content Include="Content\acitree.css" />
+    <Content Include="Content\amzonmenu.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -241,6 +288,8 @@
     <Content Include="Content\css\select2x2.png" />
     <Content Include="Content\dropdown.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\icon-search-16px.png" />
+    <Content Include="Content\jquery.typeahead.css" />
     <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\nano.css" />
     <Content Include="Content\pace\templates\pace-theme-barber-shop.tmpl.css" />
@@ -460,11 +509,6 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
@@ -477,6 +521,9 @@
     <Content Include="Areas\Admin\Views\ImageLibs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_AdminMenu.cshtml" />
+    <Content Include="Images\Career\career.png" />
+    <Content Include="Scripts\amazonmenu\amazonmenu.js" />
+    <Content Include="Scripts\initcode.js" />
     <Content Include="Scripts\ImageLib-script\acitree-script.js" />
     <Content Include="Scripts\Acitree\aciplugin.js" />
     <Content Include="Scripts\Acitree\acitree.core.js" />
@@ -548,6 +595,48 @@
     <Content Include="Areas\Admin\Views\Carousels\Index.cshtml" />
     <Content Include="json\Sample3.json" />
     <Content Include="json\json1.json" />
+    <Content Include="Areas\Admin\Views\Careers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Careers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Careers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Careers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Careers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Resumes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Resumes\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Resumes\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Resumes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Resumes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\JobCategories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\JobCategories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\JobCategories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\JobCategories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\JobCategories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\JobLocations\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\JobLocations\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\JobLocations\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\JobLocations\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\JobLocations\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Addresses\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Addresses\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Addresses\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Addresses\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Addresses\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Departments\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Departments\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Departments\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Departments\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Departments\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DepartmentMenus\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DepartmentMenus\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DepartmentMenus\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DepartmentMenus\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DepartmentMenus\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\s2.pubxml" />
+    <None Include="Properties\PublishProfiles\server1.pubxml" />
     <None Include="Scripts\Jquery\jquery-2.1.3.intellisense.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
@@ -1298,6 +1387,7 @@
     <Content Include="Scripts\Impress\impress.js" />
     <Content Include="Scripts\jquery.magnific-popup.js" />
     <Content Include="Scripts\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\jquery.typeahead.js" />
     <Content Include="Scripts\Lazyload\jquery.lazyload.js" />
     <Content Include="Scripts\Lazyload\jquery.lazyload.min.js" />
     <Content Include="Scripts\Jquery\jquery-2.1.3.js" />
@@ -1321,52 +1411,53 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ar.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_az.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_bg.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ca.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_cs.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_da.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_de.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_el.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_es.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_et.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_eu.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_fa.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_fi.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_fr.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_gl.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_he.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_hr.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_hu.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_id.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_is.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_it.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ja.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ka.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ko.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_lt.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_lv.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_mk.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ms.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_nb.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_nl.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_pl.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_pt-BR.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_pt-PT.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ro.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_rs.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ru.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_sk.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_sv.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_th.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_tr.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ua.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_ug-CN.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_uk.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_vi.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_zh-CN.js" />
-    <Content Include="Scripts\Select2-locales\select2_locale_zh-TW.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ar.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_az.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_bg.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ca.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_cs.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_da.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_de.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_el.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_es.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_et.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_eu.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_fa.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_fi.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_fr.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_gl.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_he.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_hr.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_hu.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_id.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_is.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_it.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ja.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ka.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ko.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_lt.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_lv.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_mk.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ms.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_nb.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_nl.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_pl.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_pt-BR.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_pt-PT.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ro.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_rs.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ru.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_sk.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_sv.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_th.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_tr.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ua.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_ug-CN.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_uk.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_vi.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_zh-CN.js" />
+    <Content Include="Scripts\Select2\Select2-locales\select2_locale_zh-TW.js" />
+    <Content Include="Scripts\Select2\select2.full.js" />
     <Content Include="Scripts\Select2\select2.js" />
     <Content Include="Scripts\Select2\select2.min.js" />
     <Content Include="Scripts\spinner\spin.js" />
@@ -1527,6 +1618,7 @@
     <Content Include="Scripts\tinymce\tinymce.min.js" />
     <Content Include="Scripts\angular-ui\ui-grid-unstable.js" />
     <Content Include="Scripts\angular-ui\ui-grid-unstable.min.js" />
+    <Content Include="Scripts\typeahead\typeahead.js" />
     <Content Include="Scripts\Underscore\underscore.js" />
     <Content Include="Scripts\Underscore\underscore.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -1578,12 +1670,29 @@
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <Content Include="Scripts\pace\pace.min.js.map" />
     <Content Include="Views\json\Index.cshtml" />
+    <Content Include="Views\Shared\_searchbar.cshtml" />
+    <Content Include="Views\Shared\_footer.cshtml" />
+    <Content Include="Views\Jobs\Index.cshtml" />
+    <Content Include="Views\Shared\_careerlayout.cshtml" />
+    <Content Include="Views\Jobs\Search.cshtml" />
+    <Content Include="Views\Jobs\JobLocations.cshtml" />
+    <Content Include="Views\Jobs\JobCategories.cshtml" />
+    <Content Include="Views\Jobs\ContactUs.cshtml" />
+    <Content Include="Views\Jobs\WhoWeAre.cshtml" />
+    <Content Include="Views\Jobs\Resume.cshtml" />
+    <Content Include="Views\Home\Press.cshtml" />
+    <Content Include="Views\Home\Global.cshtml" />
+    <Content Include="Views\Home\GivingBack.cshtml" />
+    <Content Include="Views\Shared\_Viewww.cshtml" />
+    <Content Include="Views\Shared\_departmentmenu.cshtml" />
+    <Content Include="Views\Shared\_carousel.cshtml" />
+    <Content Include="Views\Shared\_FeaturedProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AngularApp\" />
     <Folder Include="App_Data\" />
     <Folder Include="Content\acitree\" />
     <Folder Include="Images\Categories\" />
+    <Folder Include="Images\FrontPage\DepartmentMenu\" />
     <Folder Include="Images\FrontPage\Logo\" />
     <Folder Include="Images\Products\" />
   </ItemGroup>
@@ -1612,6 +1721,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503051550218_carousel-3.resx">
       <DependentUpon>201503051550218_carousel-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503111615497_career.resx">
+      <DependentUpon>201503111615497_career.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503111621023_career-2.resx">
+      <DependentUpon>201503111621023_career-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503130345467_department.resx">
+      <DependentUpon>201503130345467_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503130356279_department-2.resx">
+      <DependentUpon>201503130356279_department-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503131827575_department-3.resx">
+      <DependentUpon>201503131827575_department-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503131903254_departmentmenu.resx">
+      <DependentUpon>201503131903254_departmentmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503140047390_departmentmenu-2.resx">
+      <DependentUpon>201503140047390_departmentmenu-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503151747507_depmenu-image.resx">
+      <DependentUpon>201503151747507_depmenu-image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

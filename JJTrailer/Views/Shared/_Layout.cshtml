@@ -1,31 +1,40 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="JJTrailerApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <!--departmen menu-->
+    <link href="~/Content/dropdown.css" rel="stylesheet" />
+    <link href="~/Content/amzonmenu.css" rel="stylesheet" />
+    <!--search-->
+    @*<link href="~/Content/css/select2.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.1/css/select2.min.css" rel="stylesheet" />*@
+    <link href="~/Content/jquery.typeahead.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/menu.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/theme.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-static-top  ">
+    <!--nav bar-->
+    <div class="navbar navbar-static-top  " style="background-color: #ddd;">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:dodgerblue">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:dodgerblue;">
                     <span class="icon-bar glyphicon  glyphicon-minus"></span>
                     <span class="icon-bar glyphicon glyphicon-minus"></span>
                     <span class="icon-bar glyphicon glyphicon-minus"></span>
 
                 </button>
                 <a href=@Url.Action( "Index", "Home", new { area = "" })>
-                    <img class="navbar-brand" src="~/Images/FrontPage/Logo/logo.png" width="200px" height="300px" style="background-color:dodgerblue">
+                    <img class="navbar-brand" src="~/Images/FrontPage/Logo/logo.png" width="200px" height="300px" style="background-color:dodgerblue;">
 
                 </a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <ul class="nav navbar-nav" >
+                    <li >@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
@@ -33,51 +42,23 @@
             </div>
         </div>
     </div>
-
+    <!--second navbar-->
     <ul class="nav nav-tabs " style="height:60px">
         <!--Department menu-->
-        <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                Shop by Department <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li>dep1</li>
-                <li>dep2</li>
-            </ul>
+        <li role="presentation" style="width:200px;">
+            @*<ul id="menu3" ></ul>*@ 
+           <a data-dropdown2="#dropdown2-1">
+                    Shop by Department <span class="caret"></span>
+                </a>
+
         </li>
         <!--search bar-->
         <li role="presentation">
-            <form action="/" method="post" class="navbar-form form-inline " style="float:right;width:auto;">
-                <div>
-                    <ul class="list-inline">
-                        <li><label class="inputsearch">Search</label></li>
-                        <li><label style="color:white">..</label></li>
-                        <li>
-                            <select class="inputsearch">
-                                <option selected>All</option>
-                                <option>cat1</option>
-                                <option>cat2</option>
-                            </select>
-                        </li>
-                        <li><input type="search" autocomplete="on" class="inputsearch " style="width:500px" /></li>
-                        <li><button type="submit" class="inputsearch">Go</button></li>
-                    </ul>
-                </div>
-            </form>
+            @Html.Partial("_searchbar")
 
         </li>
-        <!--account menu-->
-        <li role="presentation" class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                Your Account <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li>orders</li>
-                <li>manage account</li>
-            </ul>
-        </li>
         <!--shopping cart menu-->
-        <li role="presentation" class="dropdown">
+        <li role="presentation" class="dropdown pull-right">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 Cart <span class="caret"></span>
             </a>
@@ -86,6 +67,17 @@
                 <li>checkout</li>
             </ul>
         </li>
+        <!--account menu-->
+        <li role="presentation" class="dropdown pull-right">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                Your Account <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li>orders</li>
+                <li>manage account</li>
+            </ul>
+        </li>
+
 
     </ul>
 
@@ -93,13 +85,43 @@
         <br />
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - J &amp; J Manufacturer &amp; Sales Inc.</p>
-        </footer>
+     @Html.Partial("_footer")
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Jquery/jquery-ui-1.11.3.js"></script>
+    <script src="~/Scripts/Jquery/jquery-ui-1.11.3.min.js"></script>
+    <!--angular-->
+    <script src="~/Scripts/Angular/angular.js"></script>
+    <script src="~/Scripts/Angular/angular-resource.js"></script>
+    <script src="~/Scripts/Angular/angular-route.js"></script>
+    <script src="~/Scripts/Angular/angular-touch.js"></script>
+    <script src="~/Scripts/Angular/angular-animate.js"></script>
+
+    <!--Angular app-->
+    <script src="~/AngularApp/App.js"></script>
+    <script src="~/AngularApp/Controller.js"></script>
+    <script src="~/AngularApp/Services.js"></script>
+    <script src="~/AngularApp/Filters.js"></script>
+    <script src="~/AngularApp/Animation.js"></script>
+    <!--dropdown2-->
+    <script src="~/Scripts/dropdown/dropdown.js"></script>
+    <script src="~/Scripts/amazonmenu/amazonmenu.js"></script>
+    <!--search-->
+    @*<script src="~/Scripts/Select2/select2.js"></script>
+    <script src="~/Scripts/Select2/select2.full.js"></script>
+    <script src="~/Scripts/typeahead/typeahead.js"></script>*@
+    <script src="~/Scripts/jquery.typeahead.js"></script>
+    <!--init code-->
+    <script src="~/Scripts/initcode.js"></script>
+    @Html.Partial("_departmentmenu")
+ @RenderSection("scripts", required: false)
+
+
+
+   
+
+
 </body>
 </html>

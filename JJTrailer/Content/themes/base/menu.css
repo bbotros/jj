@@ -14,9 +14,14 @@
 	margin: 0;
 	display: block;
 	outline: none;
+    z-index:1000;
+    width:350px;
 }
 .ui-menu .ui-menu {
 	position: absolute;
+    
+        z-index:1002;
+
 }
 .ui-menu .ui-menu-item {
 	position: relative;
@@ -26,6 +31,8 @@
 	min-height: 0; /* support: IE7 */
 	/* support: IE10, see #8844 */
 	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+        z-index:1001;
+
 }
 .ui-menu .ui-menu-divider {
 	margin: 5px 0;
@@ -33,10 +40,14 @@
 	font-size: 0;
 	line-height: 0;
 	border-width: 1px 0 0 0;
+        z-index:1004;
+
 }
 .ui-menu .ui-state-focus,
 .ui-menu .ui-state-active {
 	margin: -1px;
+        z-index:1005;
+
 }
 
 /* icon support */
@@ -50,7 +61,7 @@
 /* left-aligned */
 .ui-menu .ui-icon {
 	position: absolute;
-	top: 0;
+	top: 100px;
 	bottom: 0;
 	left: .2em;
 	margin: auto 0;

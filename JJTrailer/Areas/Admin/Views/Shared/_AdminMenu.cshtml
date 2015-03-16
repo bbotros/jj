@@ -24,6 +24,7 @@
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked">
+                    <li>@Html.ActionLink("Departments", "Index", "Departments", new { area = "Admin" }, null)</li>
                     <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "Admin" }, null)</li>
                     <li>@Html.ActionLink("Products", "Index", "Products", new { area = "Admin" }, null)</li>
                     <li>@Html.ActionLink("Images Manager", "Index", "ImageLibs", new { area = "Admin" }, null)</li>
@@ -48,8 +49,10 @@
                     @*<li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "Admin" }, null)</li>
                         <li>@Html.ActionLink("Products", "Index", "Products", new { area = "Admin" }, null)</li>*@
                     <li>search</li>
-                  
+
                     <li>@Html.ActionLink("Carousel", "Index", "Carousels", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Department Menu", "Index", "DepartmentMenus", new { area = "Admin" }, null)</li>
+
                 </ul>
             </div>
         </div>
@@ -68,9 +71,33 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li>manage users</li>
                     <li>orders</li>
+                    <li>@Html.ActionLink("Address", "Index", "Addresses", new { area = "Admin" }, null)</li>
+
 
                 </ul>
             </div>
         </div>
     </div>
+    <!--Career-->
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingfour">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                    Careers
+                </a>
+            </h4>
+        </div>
+        <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+            <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked">
+                    <li>@Html.ActionLink("Resumes", "Index", "Resumes", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Job Openings", "Index", "Careers", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Job Locations", "Index", "JobLocations", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Job Categories", "Index", "JobCategories", new { area = "Admin" }, null)</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </div>

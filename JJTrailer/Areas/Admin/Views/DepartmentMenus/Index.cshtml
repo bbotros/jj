@@ -1,0 +1,78 @@
+﻿@{
+}
+
+<h2>Front Page > Department Menu</h2>
+<div class="clearfix container-fluid">
+    <a data-dropdown2="#dropdown2-1" style="top: 81px;">Department Menu Preview <span class="caret"></span></a>
+</div>
+<table class="table">
+    <tr>
+        <th><p>@Html.ActionLink("Add New", "Create")</p></th>
+        <th>@Html.ActionLink("Generate Menu", "Index", new { generatemenu=true})</th>
+    </tr>
+</table>
+
+@foreach (var item2 in ViewData)
+{
+    <table class="table">
+        <tr><th><strong>@item2.Key</strong></th></tr>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Value[0])
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Order)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.show)
+                </th>
+                <th></th>*@
+        </tr>
+        @foreach (var item in ViewData[item2.Key] as IEnumerable<JJTrailer.Library.DepartmentMenu>)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.department.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Order)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.show)
+            </td>
+            <td>
+                @Html.ActionLink("edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+        }
+
+    </table>
+}
+
+@section scripts{
+    <!--dropdown2-->
+    <script src="~/Scripts/dropdown/dropdown.js"></script>
+    <script src="~/Scripts/amazonmenu/amazonmenu.js"></script>
+    <script>
+        
+    $(document).ready(function () {
+        //amazon menu
+        amazonmenu.init({
+            menuid: 'mysidebarmenu'
+        });
+    });
+    </script>
+
+}
+
+
+@section uistyles
+{
+
+    <!--departmen menu-->
+    <link href="~/Content/dropdown.css" rel="stylesheet" />
+    <link href="~/Content/amzonmenu.css" rel="stylesheet" />
+}
+@Html.Partial("_departmentmenu")

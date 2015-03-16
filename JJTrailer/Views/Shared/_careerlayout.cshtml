@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>JJTrailer careers</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="navbar navbar-static-top navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="/Jobs/Index" class="navbar-brand"><h3>J & J Trailer Careers</h3></a>
+
+                    </div>
+
+                    <ul class="navbar-nav nav pull-right">
+
+                        <li>
+                            <a href="/Home/Index">
+                                Go Back to main Website <h3 class="glyphicon glyphicon-off"></h3>
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="panel">
+                <form method="post" action="/Jobs/Search" id="searchform" class="form-group-lg">
+
+                  
+                </form>
+                @using(@Html.BeginForm("Search","Jobs")){
+
+               <input type="search" id="id" name="id" placeholder="Search for Jobs" class="input-lg form-control" />
+                <button type="submit" class="btn-lg btn btn-primary form-control" id="searchbtn">
+                    <p class="glyphicon glyphicon-search">Search</p>
+                </button>
+                } 
+
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <ul class="nav nav-tabs info ">
+                        <li><a href="/Jobs/WhoWeAre"><h4>Who We Are?</h4></a></li>
+                        <li><a href="/Jobs/Resume"><h4>Submit Resume</h4></a></li>
+                        <li><a href="/Jobs/JobCategories"><h4>Job Categories</h4></a></li>
+                        <li><a href="/Jobs/JobLocations"><h4>Job Locations</h4></a></li>
+                        <li><a href="/Jobs/ContactUs"><h4>Contact Us</h4></a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-10">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts",false)
+
+        </div>
+</body>
+</html>

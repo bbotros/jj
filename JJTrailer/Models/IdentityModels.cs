@@ -37,5 +37,19 @@ namespace JJTrailer.Models
         public System.Data.Entity.DbSet<JJTrailer.Library.ImageLib> ImageLibs { get; set; }
 
         public System.Data.Entity.DbSet<JJTrailer.Library.Carousel> Carousels { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.Career> Careers { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.JobCategory> JobCategories { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.JobLocation> JobLocations { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.Address> Addresses { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.Resume> Resumes { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.Department> Departments { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.DepartmentMenu> DepartmentMenus { get; set; }
     }
 }

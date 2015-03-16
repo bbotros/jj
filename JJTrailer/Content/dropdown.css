@@ -1,15 +1,14 @@
-﻿.dropdown {
+﻿.dropdown2 {
     position: absolute;
     z-index: 9999999;
     display: none;
 }
 
-.dropdown .dropdown-menu,
-.dropdown .dropdown-panel {
+.dropdown2 .dropdown2-menu,
+.dropdown2 .dropdown2-panel {
     min-width: 160px;
-    max-width: 360px;
     list-style: none;
-    background: #FFF;
+    background: #555;
     border: solid 1px #DDD;
     border: solid 1px rgba(0, 0, 0, .2);
     border-radius: 6px;
@@ -19,15 +18,15 @@
     margin: 0;
 }
 
-.dropdown .dropdown-panel {
-    padding: 10px;
+.dropdown2 .dropdown2-panel {
+    padding: 0;
 }
 
-.dropdown.dropdown-tip {
+.dropdown2.dropdown2-tip {
     margin-top: 8px;
 }
 
-.dropdown.dropdown-tip:before {
+.dropdown2.dropdown2-tip:before {
     position: absolute;
     top: -6px;
     left: 9px;
@@ -39,12 +38,12 @@
     display: inline-block;
 }
 
-.dropdown.dropdown-tip.dropdown-anchor-right:before {
+.dropdown2.dropdown2-tip.dropdown2-anchor-right:before {
     left: auto;
     right: 9px;
 }
 
-.dropdown.dropdown-tip:after {
+.dropdown2.dropdown2-tip:after {
     position: absolute;
     top: -5px;
     left: 10px;
@@ -55,27 +54,27 @@
     display: inline-block;
 }
 
-.dropdown.dropdown-tip.dropdown-anchor-right:after {
+.dropdown2.dropdown2-tip.dropdown2-anchor-right:after {
     left: auto;
     right: 10px;
 }
 
 
-.dropdown.dropdown-scroll .dropdown-menu,
-.dropdown.dropdown-scroll .dropdown-panel {
+.dropdown2.dropdown2-scroll .dropdown2-menu,
+.dropdown2.dropdown2-scroll .dropdown2-panel {
     max-height: 358px;
     overflow: auto;
 }
 
-.dropdown .dropdown-menu LI {
+.dropdown2 .dropdown2-menu LI {
     list-style: none;
     padding: 0 0;
     margin: 0;
     line-height: 18px;
 }
 
-.dropdown .dropdown-menu LI > A,
-.dropdown .dropdown-menu LABEL {
+.dropdown2 .dropdown2-menu LI > A,
+.dropdown2 .dropdown2-menu LABEL {
     display: block;
     color: #555;
     text-decoration: none;
@@ -85,14 +84,14 @@
     white-space: nowrap;
 }
 
-.dropdown .dropdown-menu LI > A:hover,
-.dropdown .dropdown-menu LABEL:hover {
+.dropdown2 .dropdown2-menu LI > A:hover,
+.dropdown2 .dropdown2-menu LABEL:hover {
     background-color: #08C;
     color: #FFF;
     cursor: pointer;
 }
 
-.dropdown .dropdown-menu .dropdown-divider {
+.dropdown2 .dropdown2-menu .dropdown2-divider {
     font-size: 1px;
     border-top: solid 1px #E5E5E5;
     padding: 0;
@@ -100,15 +99,15 @@
 }
 
 /* Icon Examples - icons courtesy of http://p.yusukekamiyamane.com/ */
-.dropdown.has-icons LI > A {
+.dropdown2.has-icons LI > A {
     padding-left: 30px;
     background-position: 8px center;
     background-repeat: no-repeat;
 }
 
-.dropdown .undo A { background-image: url(icons/arrow-curve-180-left.png); }
-.dropdown .redo A { background-image: url(icons/arrow-curve.png); }
-.dropdown .cut A { background-image: url(icons/scissors.png); }
-.dropdown .copy A { background-image: url(icons/document-copy.png); }
-.dropdown .paste A { background-image: url(icons/clipboard.png); }
-.dropdown .delete A { background-image: url(icons/cross-script.png); }
+.dropdown2 .undo A { background-image: url(icons/arrow-curve-180-left.png); }
+.dropdown2 .redo A { background-image: url(icons/arrow-curve.png); }
+.dropdown2 .cut A { background-image: url(icons/scissors.png); }
+.dropdown2 .copy A { background-image: url(icons/document-copy.png); }
+.dropdown2 .paste A { background-image: url(icons/clipboard.png); }
+.dropdown2 .delete A { background-image: url(icons/cross-script.png); }

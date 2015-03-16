@@ -1,0 +1,27 @@
+﻿@model IEnumerable<JJTrailer.Library.JobLocation>
+
+@{
+    ViewBag.Title = "JobLocations";
+    Layout = "~/Views/Shared/_careerlayout.cshtml";
+}
+
+<h2>JobLocations</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StoreAddress.StreetName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StoreAddress.StreetName)
+        </td>
+     
+    </tr>
+}
+
+</table>

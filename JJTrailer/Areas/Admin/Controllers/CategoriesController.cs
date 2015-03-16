@@ -19,7 +19,8 @@ namespace JJTrailer.Areas.Admin.Controllers
         // GET: Admin/Categories
         public async Task<ActionResult> Index()
         {
-            return View(await db.Categories.ToListAsync());
+            var categories = db.Categories.Include(c => c.department);
+            return View(await categories.ToListAsync());
         }
 
         // GET: Admin/Categories/Details/5
@@ -40,6 +41,9 @@ namespace JJTrailer.Areas.Admin.Controllers
         // GET: Admin/Categories/Create
         public ActionResult Create()
         {
+            ViewBag.DepartmentID = new SelectList(db.Departments, "ID", "Name");
+            ViewBag.CategoryID = new SelectList(db.Categories, "ID", "Name");
+
             return View();
         }
 
@@ -48,7 +52,7 @@ namespace JJTrailer.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "ID,Name,CategoryID")] Category category)
+        public async Task<ActionResult> Create([Bind(Include = "ID,Name,CategoryID,DepartmentID")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -58,6 +62,7 @@ namespace JJTrailer.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.DepartmentID = new SelectList(db.Departments, "ID", "Name", category.DepartmentID);
             return View(category);
         }
 
@@ -73,6 +78,7 @@ namespace JJTrailer.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.DepartmentID = new SelectList(db.Departments, "ID", "Name", category.DepartmentID);
             return View(category);
         }
 
@@ -81,7 +87,7 @@ namespace JJTrailer.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,CategoryID")] Category category)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,CategoryID,DepartmentID")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -89,6 +95,7 @@ namespace JJTrailer.Areas.Admin.Controllers
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+            ViewBag.DepartmentID = new SelectList(db.Departments, "ID", "Name", category.DepartmentID);
             return View(category);
         }
 
