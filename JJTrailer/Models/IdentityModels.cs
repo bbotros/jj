@@ -20,11 +20,17 @@ namespace JJTrailer.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+#if DEBUG
         public ApplicationDbContext()
             : base("DefaultConnection2", throwIfV1Schema: false)
         {
         }
-
+#else
+           public ApplicationDbContext()
+            : base("DefaultConnection1", throwIfV1Schema: false)
+        {
+        }
+#endif
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
