@@ -304,6 +304,7 @@
     <Content Include="Content\css2\select2x2.png" />
     <Content Include="Content\dropdown.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\header.css" />
     <Content Include="Content\icon-search-16px.png" />
     <Content Include="Content\jquery.typeahead.css" />
     <Content Include="Content\magnific-popup.css" />
@@ -539,6 +540,7 @@
     <Content Include="Images\bird-forward-back.png" />
     <Content Include="Images\Career\career.png" />
     <Content Include="Scripts\amazonmenu\amazonmenu.js" />
+    <Content Include="Scripts\imageliquid\imgLiquid.min.js" />
     <Content Include="Scripts\initcode.js" />
     <Content Include="Scripts\ImageLib-script\acitree-script.js" />
     <Content Include="Scripts\Acitree\aciplugin.js" />

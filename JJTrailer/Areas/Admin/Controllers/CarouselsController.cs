@@ -57,11 +57,11 @@ namespace JJTrailer.Areas.Admin.Controllers
               for (int i = 0; i < tmp.Count();i++ )
                {
                   if(i==0)
-                   wholefile += "<div class='item active' style='width:100%; height:300px;'>";
+                      wholefile += "<div class='item imgLiquidFill imgLiquid active' style='width:100%; height:400px;'>";
                   else
-                      wholefile += "<div class='item' style='width:100%; height:300px;'>";
+                      wholefile += "<div class='item imgLiquidFill imgLiquid' style='width:100%; height:400px;'>";
 
-                      wholefile+="<img src='~"+tmp[i].FilePath+"'alt='...' width='100%' height='100%' >";
+                      wholefile+="<img src='~"+tmp[i].FilePath+"'alt='...'  >";
                       wholefile+="<div class='carousel-caption'>";
                       wholefile += tmp[i].FileName;     
                        wholefile+="</div></div>";

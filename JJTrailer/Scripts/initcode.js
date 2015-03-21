@@ -3,11 +3,34 @@
     amazonmenu.init({
         menuid: 'mysidebarmenu'
     });
-    $('#gif2').sprite({ fps: 1, no_of_frames: 3 });
-    //$('#gif3').sprite({ fps:3, no_of_frames: 3 });
-    $('#trees').pan({ fps: 30, speed: 2, dir: 'right' });
-    $('#gif3').pan({ fps: 30, speed: 2, dir: 'left' });
+    //carousel
+   $(".imgLiquidFill").imgLiquid({
+        fill: true,
+        horizontalAlign: "center"
+   });
+    //header
+    $('#bird')
+					.sprite({ fps: 1, no_of_frames: 3 });
+					
+				
+    $('#clouds').pan({ fps: 30, speed: 0.5, dir: 'right', depth: 10 });
+    $('#hill2').pan({ fps: 30, speed: 1, dir: 'right', depth: 30 });
+    $('#hill1').pan({ fps: 30, speed: 2, dir: 'right', depth: 70 });
+    $('#trailers').pan({ fps: 30, speed: 2, dir: 'right', depth: 70 });
+    $('#hill1, #hill2, #clouds').spRelSpeed(8);
 
+    //.spRandom({ top: 50, bottom: 200, left: 300, right: 320 })
+	//				.isDraggable()
+	//				.activeOnClick()
+    //$('#gif2').sprite({ fps: 1, no_of_frames: 3 });
+    //$('#gif3').sprite({ fps:3, no_of_frames: 3 });
+   // $('#trees').pan({ fps: 30, speed: 2, dir: 'right' });
+   // $('#gif3').pan({ fps: 30, speed: 2, dir: 'left' });
+    //$('#gif2').pan({ fps: 30, speed: 2, dir: 'right' });
+    //$('#sky').pan({ fps: 30, speed: 0.7, dir: 'left', depth: 10 });
+
+    //$('#clouds').pan({ fps: 30, speed: 0.7, dir: 'left', depth: 10 });
+ 
 
     //    $("#menu").menu();
 

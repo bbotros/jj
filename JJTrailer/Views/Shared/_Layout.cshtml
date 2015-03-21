@@ -11,15 +11,25 @@
     <link href="~/Content/amzonmenu.css" rel="stylesheet" />
     <!--search-->
     <link href="~/Content/jquery.typeahead.css" rel="stylesheet" />
+    <link href="~/Content/header.css" rel="stylesheet" />
 </head>
 <body>
     <!--nav bar-->
  @{ Html.RenderPartial("_navbar1");}
     <!--second navbar-->
     @{ Html.RenderPartial("_navbar2");}
-    <div class="container body-content">
-        <br />
-        @RenderBody()
+    <div class="container-fluid ">
+            <div class="row">
+                <div class="col-md-3" style="padding-left:0;">
+                    Shop by Department <span class="caret"></span>
+                    @Html.Partial("_departmentmenu")
+                </div>
+                <div class="col-md-9 body-content"><br />
+                    @RenderBody()
+                </div>
+
+            </div>
+
         <hr />
      @Html.Partial("_footer")
     </div>
@@ -32,9 +42,10 @@
     <script src="~/Scripts/jquery.typeahead.js"></script>
     <!--header-->
     <script src="~/Scripts/Spritely/jquery.spritely.js"></script>
+    <script src="~/Scripts/imageliquid/imgLiquid.min.js"></script>
     <!--init code-->
     <script src="~/Scripts/initcode.js"></script>
-    @Html.Partial("_departmentmenu")
+    
     @Html.Partial("_shoppingCart")
     @Html.Partial("_Account")
  @RenderSection("scripts", required: false)

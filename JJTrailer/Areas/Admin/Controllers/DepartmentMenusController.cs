@@ -139,7 +139,7 @@ namespace JJTrailer.Areas.Admin.Controllers
 
         private void buildDepartmentHtml()
         {
-         string Wholefile= "<div id='dropdown2-1' class='dropdown2 dropdown2-tip'><div class='dropdown2-panel'><nav2 id='mysidebarmenu' class='amazonmenu'><ul>";
+         string Wholefile= "<nav2 id='mysidebarmenu' class='amazonmenu'><ul>";
          
          shortDepartmentMenu[] file = JsonConvert.DeserializeObject<shortDepartmentMenu[]>(System.IO.File.ReadAllText(HostingEnvironment.ApplicationPhysicalPath + "/json/" + "Departmentmenu" + ".json"));
          int numberofrows = file.Count()-8;
@@ -216,7 +216,7 @@ namespace JJTrailer.Areas.Admin.Controllers
                 }
             }
         
-         Wholefile+="</ul></nav2></div></div>";
+         Wholefile+="</ul></nav2>";
         System.IO.File.WriteAllText(HostingEnvironment.ApplicationPhysicalPath + "/Views/" + "Shared/" + "_departmentmenu" + ".cshtml", Wholefile);
         }
 
