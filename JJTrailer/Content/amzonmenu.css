@@ -6,7 +6,7 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
- 
+
 
 }
 
@@ -16,11 +16,13 @@
 
 .amazonmenu > ul{
 	background: white;
-	border: 0 solid gray;
+	border: 1px solid gray;
 	border-radius: 5px;
-	min-width: 300px; /* width of main menu */
+	min-width: 250px; /* width of main menu */
 	min-height: 200px; /* height of main menu */
+    max-width:400px;
 	position: relative;
+    z-index:1000;
 }
 
 .amazonmenu > ul li a{

@@ -1,41 +1,139 @@
 ﻿@*<div class="navbar navbar-static-top  " style="background-color: #ddd;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:dodgerblue;">
+                    <span class="icon-bar glyphicon  glyphicon-minus"></span>
+                    <span class="icon-bar glyphicon glyphicon-minus"></span>
+                    <span class="icon-bar glyphicon glyphicon-minus"></span>
+
+                </button>
+                <a href=@Url.Action( "Index", "Home", new { area = "" })>
+                    <img class="navbar-brand" src="~/Images/FrontPage/Logo/logo.png" width="200px" height="300px" style="background-color:dodgerblue;">
+
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>*@
+
+@*<div id="sky" style="background:#aedfe5 url('/Images/FrontPage/Logo/sky1.png') 0 0 repeat-x; width:100%;min-width:700px; height:200px;">
+    </div>
+    <div id="clouds" style="background: transparent url('/Images/FrontPage/Logo/clouds.jpg')  repeat-x;  width:100%;min-width:700px; height:200px;">
+    </div>
+    <div id="trees" style="background: url('/Images/FrontPage/Logo/bg.jpg') 0 0 no-repeat; width:auto; height:200px;">
+    </div>
+    <div id="bg" class="imgLiquidFill imgLiquid" style="width:auto; height:200px;position:absolute; top:0;">
+        <img src="/Images/FrontPage/Logo/bg.jpg" alt="Alternate Text" />
+    </div>*@
+
+@*<div id="logo" style="background: url('/Images/FrontPage/Logo/logo.png') 0 0 no-repeat; width:385px; height:200px; position:absolute; top:0;">
+
+    </div>
+    <div id="gif2" style="background:transparent url('/Images/FrontPage/Logo/gif2.png') 0 0 no-repeat; width:100%; height:200px; position:absolute; top:0; left:0;">
+
+    </div>*@
+@*<div id="gif3" style="background:transparent url('/Images/FrontPage/Logo/gif3.png') 0 0 no-repeat; width:200px; height:72px; position:absolute; top:50px; left:586px;">
+
+    </div>*@
+
+
+
+
+<div class="navbar navbar-static-top  " style="min-height:200px;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:dodgerblue;">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="z-index:9999;">
                 <span class="icon-bar glyphicon  glyphicon-minus"></span>
                 <span class="icon-bar glyphicon glyphicon-minus"></span>
                 <span class="icon-bar glyphicon glyphicon-minus"></span>
-
             </button>
-            <a href=@Url.Action( "Index", "Home", new { area = "" })>
-                <img class="navbar-brand" src="~/Images/FrontPage/Logo/logo.png" width="200px" height="300px" style="background-color:dodgerblue;">
+            <div id="bird2">
+                <img src="/Images/FrontPage/Logo/logo.png" width="400px" alt="Alternate Text" />
+            </div>
+            <!--Address1-->
+            <div id="Address1" class="imgLiquidFill imgLiquid text-center" style=" color:white; width:250px; height:200px; position:absolute; top:0; right:0">
 
-            </a>
+                <div style="margin: 0;
+    background-color: #808080;
+    border: 1px solid black;
+    opacity: 0.8;
+    filter: alpha(opacity=60);">
+
+                    <p><h4><strong>WEST END <br />GTA</strong></h4></p>
+                    <p><strong>298 BRIDGELAND AVENUE</strong></p>
+                    <p><strong>NORTH YORK, ON M6A 1Z4</strong></p>
+                    <p><strong>NORTH OF FINCH AVENUE - EAST OF MARKHAM ROAD</strong></p>
+                    <p><h4>416-785-4482</h4></p>
+                </div>
+            </div>
+            <!--Address2-->
+            <div id="Address2" class="imgLiquidFill imgLiquid text-center" style=" color:white; width:250px; height:200px; position:absolute; top:0; right:250px">
+
+                <div style="margin: 0;
+    background-color: #808080;
+    border: 1px solid black;
+    opacity: 0.8;
+    filter: alpha(opacity=60);">
+
+                    <p><h4><strong>EAST END GTA/ HEAD OFFICE</strong></h4></p>
+                    <p><strong>345 FINCHDENE SQ</strong></p>
+                    <p><strong>SCARBOROUGH, ON M1X 1B9</strong></p>
+                    <p><strong>NORTH OF FINCH AVENUE - EAST OF MARKHAM ROAD</strong></p>
+                    <p><h4>416-298-4482</h4></p>
+                </div>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-            </ul>
-            @Html.Partial("_LoginPartial")
+        <div class="navbar-collapse collapse" style=" min-width: 768px;">
+
+            <div id="stage" class="stage">
+                <div id="tap" class="stage"></div>
+                <div id="bg" class="stage"></div>
+                <div id="clouds" class="stage"></div>
+                <div id="hill2" class="stage"></div>
+                <div id="hill1" class="stage"></div>
+                <div id="trailers" class="stage"></div>
+            </div>
+            <div id="bird"></div>
+
+            <!--Address1-->
+            <div id="Address1" class="imgLiquidFill imgLiquid text-center" style=" color:white; width:250px; height:200px; position:absolute; top:0; right:0">
+
+                <div style="margin: 0;
+    background-color: #808080;
+    border: 1px solid black;
+    opacity: 0.8;
+    filter: alpha(opacity=60);">
+
+                    <p><h4><strong>WEST END <br />GTA</strong></h4></p>
+                    <p><strong>298 BRIDGELAND AVENUE</strong></p>
+                    <p><strong>NORTH YORK, ON M6A 1Z4</strong></p>
+                    <p><strong>NORTH OF FINCH AVENUE - EAST OF MARKHAM ROAD</strong></p>
+                    <p><h4>416-785-4482</h4></p>
+                </div>
+            </div>
+            <!--Address2-->
+            <div id="Address2" class="imgLiquidFill imgLiquid text-center" style=" color:white; width:250px; height:200px; position:absolute; top:0; right:250px">
+
+                <div style="margin: 0;
+    background-color: #808080;
+    border: 1px solid black;
+    opacity: 0.8;
+    filter: alpha(opacity=60);">
+
+                    <p><h4><strong>EAST END GTA/ HEAD OFFICE</strong></h4></p>
+                    <p><strong>345 FINCHDENE SQ</strong></p>
+                    <p><strong>SCARBOROUGH, ON M1X 1B9</strong></p>
+                    <p><strong>NORTH OF FINCH AVENUE - EAST OF MARKHAM ROAD</strong></p>
+                    <p><h4>416-298-4482</h4></p>
+                </div>
+            </div>
         </div>
     </div>
-</div>*@
-<div id="trees" style="background: transparent url('/Images/FrontPage/Logo/bg.png') 0 0 repeat-x; width:auto; height:200px;">
-</div>
-<div id="logo" style="background: url('/Images/FrontPage/Logo/logo.png') 0 0 no-repeat; width:385px; height:200px; position:absolute; top:0;">
-
-</div>
-<div id="gif2" style="background:transparent url('/Images/FrontPage/Logo/gif2.png') 0 0 no-repeat; width:200px; height:200px; position:absolute; top:0; left:386px;">
-
-</div>
-<div id="gif3" style="background:transparent url('/Images/FrontPage/Logo/gif3.png') 0 0 no-repeat; width:200px; height:72px; position:absolute; top:50px; left:586px;">
-
-</div>
-<div id="Address1" style=" width:100px; height:100px; position:absolute; top:0; right:0">
-   <p>WEST END GTA</p>
-    <p>298 BRIDGELAND AVENUE</p>
-    <p>NORTH YORK, ON M6A 1Z4</p>
-    <p>SOUTH OF 401 - </p>
 </div>
