@@ -1,0 +1,35 @@
+﻿@*<div class="navbar navbar-static-top  " style="background-color: #ddd;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:dodgerblue;">
+                <span class="icon-bar glyphicon  glyphicon-minus"></span>
+                <span class="icon-bar glyphicon glyphicon-minus"></span>
+                <span class="icon-bar glyphicon glyphicon-minus"></span>
+
+            </button>
+            <a href=@Url.Action( "Index", "Home", new { area = "" })>
+                <img class="navbar-brand" src="~/Images/FrontPage/Logo/logo.png" width="200px" height="300px" style="background-color:dodgerblue;">
+
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>*@
+<div id="trees" style="background: transparent url('/Images/FrontPage/Logo/bg.png') 0 0 repeat-x; width:auto; height:200px;">
+</div>
+<div id="logo" style="background: url('/Images/FrontPage/Logo/logo.png') 0 0 no-repeat; width:385px; height:200px; position:absolute; top:0;">
+
+</div>
+<div id="gif2" style="background:transparent url('/Images/FrontPage/Logo/gif2.png') 0 0 no-repeat; width:200px; height:200px; position:absolute; top:0; left:386px;">
+
+</div>
+<div id="gif3" style="background:transparent url('/Images/FrontPage/Logo/gif3.png') 0 0 no-repeat; width:200px; height:72px; position:absolute; top:50px; left:586px;">
+
+</div>

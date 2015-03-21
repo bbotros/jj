@@ -1,0 +1,46 @@
+﻿@model IEnumerable<JJTrailer.Library.STLfilemanager>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products>3d models</h2>
+@using (Html.BeginForm("Index", "STLfilemanagers", FormMethod.Post))
+{
+
+    <table class="table">
+        <tr>
+            <th>@Html.DropDownList("STLfile", null, "select one for preview", htmlAttributes: new { @class = "form-control" })</th>
+            <th><input type="submit" value="preview" /></th>
+        </tr>
+    </table>
+}
+@Url.Content("~"+ViewBag.url)
+<p>
+    @Html.ActionLink("upload file", "Create")
+</p>
+
+<iframe src="/Admin/STLfilemanagers/threejCanvas?url=@Url.Content("~"+ViewBag.url)"
+        width="800px" height="500px"></iframe>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.filepath)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.filepath)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

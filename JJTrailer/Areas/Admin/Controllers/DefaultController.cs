@@ -13,5 +13,11 @@ namespace JJTrailer.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult threejs() { return View(); }
+        public ActionResult threejsCanvas(string url) {
+          //  ViewBag.url = "\\Threejs\\STL\\"+url+".stl";
+            ViewBag.url = url;
+            return View(); }
+
     }
 }

@@ -28,6 +28,7 @@
                     <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "Admin" }, null)</li>
                     <li>@Html.ActionLink("Products", "Index", "Products", new { area = "Admin" }, null)</li>
                     <li>@Html.ActionLink("Images Manager", "Index", "ImageLibs", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("3D Manager", "Index", "STLfilemanagers", new { area = "Admin" }, null)</li>
 
                 </ul>
 
@@ -99,5 +100,24 @@
             </div>
         </div>
     </div>
+    <!--Three JS-->
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingsix">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                    Sandbox
+                </a>
+            </h4>
+        </div>
+        <div id="collapsesix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingsix">
+            <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked">
+                 
+                    <li>@Html.ActionLink("Threejs", "Threejs", "Default", new { area = "Admin" }, null)</li>
 
+
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

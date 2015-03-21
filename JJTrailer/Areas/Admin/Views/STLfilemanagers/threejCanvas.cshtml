@@ -1,0 +1,38 @@
+﻿@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>threejsCanvas</title>
+    <link href="~/ThreeJs/style.css" rel="stylesheet" />
+</head>
+<body>
+
+
+
+    <script src="~/ThreeJs/three.js/build/three.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.js"></script>
+    <script src="~/ThreeJs/STLLoader.js"></script>
+    <script src="~/ThreeJs/Detector.js"></script>
+    <script src="~/ThreeJs/stats.js"></script>
+    @if (ViewBag.url == null)
+    {
+        ViewBag.url = "\\Threejs\\STL\\part6.stl";
+
+    }
+    <label id='filelable'>@ViewBag.url</label>
+    <script>
+        var tmp = document.getElementById('filelable').innerText
+        //var url_binarycolored = "\\Threejs\\STL\\" + tmp.toString() + ".stl";
+        var url_binarycolored = tmp.toString();
+    </script>
+    <script src="~/ThreeJs/init.js"></script>
+
+</body>
+
+</html>

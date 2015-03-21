@@ -4,11 +4,29 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>FrontPage>Carousel</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@using (Html.BeginForm("Index", "Carousels", FormMethod.Post))
+{
+<table class="table">
+    <tr>
+        <th>@Html.DropDownList("carouselview", null, "select one for the homepage", htmlAttributes: new { @class = "form-control" })</th>
+        <th><input type="submit" value="Generate menu"  /></th>
+
+        <th><a href="#carouseldiv"><p>Preview</p></a></th>
+
+    </tr>
+</table>
+}
+<table class="table">
+    <tr>
+        <th><p> @Html.ActionLink("Create New", "Create")</p></th>
+
+    </tr>
+</table>
+<div id="carouseldiv">
+    @Html.Partial("_carousel")
+</div>
 <table class="table">
     <tr>
         <th>
@@ -20,20 +38,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateAdded)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
 
 </table>

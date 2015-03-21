@@ -3,39 +3,44 @@
     amazonmenu.init({
         menuid: 'mysidebarmenu'
     });
- 
+    $('#gif2').sprite({ fps: 1, no_of_frames: 3 });
+    //$('#gif3').sprite({ fps:3, no_of_frames: 3 });
+    $('#trees').pan({ fps: 30, speed: 2, dir: 'right' });
+    $('#gif3').pan({ fps: 30, speed: 2, dir: 'left' });
+
+
     //    $("#menu").menu();
 
 
 
 
-   $.getJSON('/Admin/DepartmentMenus/GetDep', function (data) {
-       console.log(data);
-       var getMenuItem = function (itemData) {
-           var item = $("<li>")
-               .append(
-           $("<a>", {
-               href: '#' + itemData.path,
-               html: itemData.name
-           }));
-           if (itemData.children) {
-               var subList = $("<ul>");
-               $.each(itemData.children, function () {
-                   subList.append(getMenuItem(this));
-               });
-               item.append(subList);
-           }
-           return item;
-       };
+   //$.getJSON('/Admin/DepartmentMenus/GetDep', function (data) {
+   //    console.log(data);
+   //    var getMenuItem = function (itemData) {
+   //        var item = $("<li>")
+   //            .append(
+   //        $("<a>", {
+   //            href: '#' + itemData.path,
+   //            html: itemData.name
+   //        }));
+   //        if (itemData.children) {
+   //            var subList = $("<ul>");
+   //            $.each(itemData.children, function () {
+   //                subList.append(getMenuItem(this));
+   //            });
+   //            item.append(subList);
+   //        }
+   //        return item;
+   //    };
 
-       var $menu = $("#menu3");
-       $.each(data, function () {
-           $menu.append(
-               getMenuItem(this)
-           );
-       });
+   //    var $menu = $("#menu3");
+   //    $.each(data, function () {
+   //        $menu.append(
+   //            getMenuItem(this)
+   //        );
+   //    });
 
-   });
+   //});
 
 
 

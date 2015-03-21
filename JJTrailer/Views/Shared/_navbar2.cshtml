@@ -1,0 +1,31 @@
+﻿
+<ul class="nav nav-tabs " style="height:60px">
+    <!--Department menu-->
+    <li role="presentation" style="width:200px;">
+        <a data-dropdown2="#dropdown2-1">
+            Shop by <br />Department <span class="caret"></span>
+        </a>
+
+    </li>
+    <!--search bar-->
+    <li role="presentation">
+        @Html.Partial("_searchbar")
+    </li>
+    <li role="presentation" class="pull-right">
+        <a><p>....</p></a>
+        </li>
+        <!--shopping cart menu-->
+<li role="presentation" class="dropdown pull-right">
+        <a data-dropdown2="#dropdown2-shoppingcart">
+            <span class="glyphicon glyphicon-shopping-cart" style="font-size:larger">   </span> <span class="badge">4</span><br />Shopping Cart <span class="caret"></span>
+        </a>
+    </li>
+    <!--account menu-->
+    <li role="presentation" class="dropdown pull-right">
+        <a data-dropdown2="#dropdown2-account">
+            <span class="glyphicon glyphicon-user" style="font-size:larger">Your<br />Account </span> <span class="caret"></span>
+        </a>
+        
+        
+    </li>
+</ul>

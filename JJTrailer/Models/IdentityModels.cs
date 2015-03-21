@@ -21,7 +21,7 @@ namespace JJTrailer.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection2", throwIfV1Schema: false)
         {
         }
 
@@ -51,5 +51,7 @@ namespace JJTrailer.Models
         public System.Data.Entity.DbSet<JJTrailer.Library.Department> Departments { get; set; }
 
         public System.Data.Entity.DbSet<JJTrailer.Library.DepartmentMenu> DepartmentMenus { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.STLfilemanager> STLfilemanagers { get; set; }
     }
 }

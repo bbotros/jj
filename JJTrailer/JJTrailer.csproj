@@ -37,6 +37,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bAttachDbFilename=|DataDirectory|\aspnet-JJTrailer-20150303085543.mdf%3bInitial Catalog=aspnet-JJTrailer-20150303085543%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
@@ -199,6 +211,7 @@
     <Compile Include="Areas\Admin\Controllers\JobLocationsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ResumesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\STLfilemanagersController.cs" />
     <Compile Include="Areas\Admin\Models\Default.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
@@ -260,6 +273,10 @@
     <Compile Include="Migrations\201503151747507_depmenu-image.Designer.cs">
       <DependentUpon>201503151747507_depmenu-image.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503191850494_stl.cs" />
+    <Compile Include="Migrations\201503191850494_stl.Designer.cs">
+      <DependentUpon>201503191850494_stl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -280,12 +297,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\font-awesome.css" />
-    <Content Include="Content\css\font-awesome.min.css" />
-    <Content Include="Content\css\select2-spinner.gif" />
-    <Content Include="Content\css\select2.css" />
-    <Content Include="Content\css\select2.png" />
-    <Content Include="Content\css\select2x2.png" />
+    <Content Include="Content\css2\font-awesome.css" />
+    <Content Include="Content\css2\font-awesome.min.css" />
+    <Content Include="Content\css2\select2-spinner.gif" />
+    <Content Include="Content\css2\select2.css" />
+    <Content Include="Content\css2\select2.png" />
+    <Content Include="Content\css2\select2x2.png" />
     <Content Include="Content\dropdown.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\icon-search-16px.png" />
@@ -495,7 +512,6 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\ui-grid-unstable.css" />
     <Content Include="Content\ui-grid-unstable.min.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ui-grid.svg" />
     <Content Include="Global.asax" />
@@ -521,6 +537,7 @@
     <Content Include="Areas\Admin\Views\ImageLibs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_AdminMenu.cshtml" />
+    <Content Include="Images\bird-forward-back.png" />
     <Content Include="Images\Career\career.png" />
     <Content Include="Scripts\amazonmenu\amazonmenu.js" />
     <Content Include="Scripts\initcode.js" />
@@ -635,6 +652,18 @@
     <Content Include="Areas\Admin\Views\DepartmentMenus\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DepartmentMenus\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DepartmentMenus\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Default\threejs.cshtml" />
+    <Content Include="Areas\Admin\Views\Default\threejsCanvas.cshtml" />
+    <Content Include="Areas\Admin\Views\STLfilemanagers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\STLfilemanagers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\STLfilemanagers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\STLfilemanagers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\STLfilemanagers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\STLfilemanagers\threejsCanvas.cshtml" />
+    <Content Include="Areas\Admin\Views\STLfilemanagers\threejCanvas.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\threejCanvas.cshtml" />
+    <None Include="Properties\PublishProfiles\file.pubxml" />
+    <None Include="Properties\PublishProfiles\new.jjtrailer.com.pubxml" />
     <None Include="Properties\PublishProfiles\s2.pubxml" />
     <None Include="Properties\PublishProfiles\server1.pubxml" />
     <None Include="Scripts\Jquery\jquery-2.1.3.intellisense.js" />
@@ -1462,8 +1491,15 @@
     <Content Include="Scripts\Select2\select2.min.js" />
     <Content Include="Scripts\spinner\spin.js" />
     <Content Include="Scripts\spinner\spin.min.js" />
-    <Content Include="Scripts\three.js\build\three.js" />
-    <Content Include="Scripts\three.js\build\three.min.js" />
+    <Content Include="Scripts\Spritely\jquery.spritely.js" />
+    <Content Include="ThreeJs\ColladaLoader.js" />
+    <Content Include="ThreeJs\STLLoader.js" />
+    <Content Include="ThreeJs\Detector.js" />
+    <Content Include="ThreeJs\init.js" />
+    <Content Include="ThreeJs\stats.js" />
+    <Content Include="ThreeJs\style.css" />
+    <Content Include="ThreeJs\three.js\build\three.js" />
+    <Content Include="ThreeJs\three.js\build\three.min.js" />
     <Content Include="Scripts\tinymce\license.txt" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.js" />
     <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
@@ -1622,7 +1658,9 @@
     <Content Include="Scripts\Underscore\underscore.js" />
     <Content Include="Scripts\Underscore\underscore.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1687,11 +1725,20 @@
     <Content Include="Views\Shared\_departmentmenu.cshtml" />
     <Content Include="Views\Shared\_carousel.cshtml" />
     <Content Include="Views\Shared\_FeaturedProduct.cshtml" />
+    <Content Include="Views\Shared\_shoppingCart.cshtml" />
+    <Content Include="Views\Shared\_Account.cshtml" />
+    <Content Include="Views\Shared\_navbar1.cshtml" />
+    <Content Include="Views\Shared\_navbar2.cshtml" />
+    <Content Include="ThreeJs\ferrarif458.stl" />
+    <Content Include="ThreeJs\WonderBall.STL" />
+    <Content Include="ThreeJs\STL\Part5.STL" />
+    <Content Include="ThreeJs\STL\Part6.STL" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\acitree\" />
     <Folder Include="Images\Categories\" />
+    <Folder Include="Images\FrontPage\Carousel\" />
     <Folder Include="Images\FrontPage\DepartmentMenu\" />
     <Folder Include="Images\FrontPage\Logo\" />
     <Folder Include="Images\Products\" />
@@ -1746,10 +1793,17 @@
     <EmbeddedResource Include="Migrations\201503151747507_depmenu-image.resx">
       <DependentUpon>201503151747507_depmenu-image.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503191850494_stl.resx">
+      <DependentUpon>201503191850494_stl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
