@@ -199,7 +199,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AddressesController.cs" />
     <Compile Include="Areas\Admin\Controllers\CareersController.cs" />
     <Compile Include="Areas\Admin\Controllers\CarouselsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
@@ -1836,7 +1835,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties json_2Sample2_1json__JSONSchema="http://json-schema.org/draft-04/schema" json_2sample_1json__JSONSchema="http://json-schema.org/card" />
+      <UserProperties json_2sample_1json__JSONSchema="http://json-schema.org/card" json_2Sample2_1json__JSONSchema="http://json-schema.org/draft-04/schema" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
