@@ -67,7 +67,7 @@
 	box-shadow: 2px 2px 2px gray;
 	display: none;
 	font-weight: normal;
-	min-width: 600px;
+	min-width: 400px;
 	height:100%; /* height of sub menu */
 	left: 100%;
 	padding: 10px;

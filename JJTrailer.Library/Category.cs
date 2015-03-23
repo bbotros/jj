@@ -10,13 +10,13 @@ namespace JJTrailer.Library
     public class Category
     {
         public Guid ID { get; set; }
-                 [Display(Name = "Category Name")]
-
+        [Display(Name = "Category Name")]
         public string Name { get; set; }
          [Display(Name = "Parent Category")]
         public Guid? CategoryID { get; set; }
-                 [Display(Name = "Department Name")]
-
+         public int Order { get; set; }
+        public bool show { get; set; }
+        [Display(Name = "Department Name")]
         public Guid DepartmentID { get; set; }
         public virtual Department department { get; set; }
         public virtual ICollection<Category> SubCategories{get;set;}

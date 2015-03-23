@@ -31,8 +31,8 @@ namespace JJTrailer.Areas.Admin.Controllers
         // GET: Admin/DepartmentMenus
         public ActionResult Index(bool generatemenu=false)
         {
-            var departmentMenus = db.DepartmentMenus.Include(d => d.department);
-            var dep = departmentMenus.GroupBy(s => s.department.departmentType) ;
+            var departmentMenus = db.DepartmentMenus.Include(d => d.department).Include(d=>d.department.Categories);
+            var dep = departmentMenus.GroupBy(s => s.department.departmentType);
             List<shortDepartmentMenu> temp = null;
             List<shortDepartmentMenu> temp2 = null;
             shortDepartmentMenu temp3 = null;
@@ -52,6 +52,7 @@ namespace JJTrailer.Areas.Admin.Controllers
                 temp5 = new List<shortDepartmentMenu>();
                 foreach (var item in ViewData)
                 {
+                    //add department types
                     temp3 = new shortDepartmentMenu()
                     {
                         name = item.Key,
@@ -60,6 +61,7 @@ namespace JJTrailer.Areas.Admin.Controllers
                         children = null
                     };
                     temp.Add(temp3);
+                    //add departments
                     foreach (var item2 in ViewData[item.Key.ToString()] as IEnumerable<DepartmentMenu>)
                     {
                         if (item2.show)
@@ -73,7 +75,8 @@ namespace JJTrailer.Areas.Admin.Controllers
                             };
 
                             temp2 = new List<shortDepartmentMenu>();
-                        foreach(var item3 in item2.department.Categories)
+                            //add categories
+                        foreach(var item3 in item2.department.Categories.OrderBy(s=>s.Order).Where(s=>s.show==true).Where(S=>S.CategoryID==null))
                         {
                             if (item3.SubCategories != null && item3.SubCategories.Count() > 0)
                             {
@@ -87,15 +90,36 @@ namespace JJTrailer.Areas.Admin.Controllers
                                 };
                                 temp5= new List<shortDepartmentMenu>();
 
-                                foreach (var item4 in item3.SubCategories)
+                                foreach (var item4 in item3.SubCategories.OrderBy(s=>s.Order).Where(s=>s.show==true))
                                 {
-                                    temp5.Add(new shortDepartmentMenu()
+                                    if (item4.SubCategories != null && item4.SubCategories.Count() > 0)
+                                    {
+                                        List<shortDepartmentMenu> tmp9 = new List<shortDepartmentMenu>();
+                                        foreach (var item5 in item4.SubCategories)
+                                        {
+                                            tmp9.Add(new shortDepartmentMenu { name = item5.Name, path = item5.ID.ToString(), imagepath = null, children = null });
+                                            
+                                        }
+                                        temp5.Add(new shortDepartmentMenu()
+                                        {
+                                            name = item4.Name,
+                                            path = item4.ID.ToString(),
+                                            imagepath = null,
+                                            children = tmp9.ToArray()
+                                        });
+
+
+                                    }
+                                    else { 
+                                      temp5.Add(new shortDepartmentMenu()
                                     {
                                         name = item4.Name,
                                         path = item4.ID.ToString(),
                                         imagepath = null,
                                         children = null
                                     });
+                                    }
+                                  
 
 
                                 }
@@ -142,7 +166,7 @@ namespace JJTrailer.Areas.Admin.Controllers
          string Wholefile= "<nav2 id='mysidebarmenu' class='amazonmenu'><ul>";
          
          shortDepartmentMenu[] file = JsonConvert.DeserializeObject<shortDepartmentMenu[]>(System.IO.File.ReadAllText(HostingEnvironment.ApplicationPhysicalPath + "/json/" + "Departmentmenu" + ".json"));
-         int numberofrows = file.Count()-8;
+         int numberofrows = file.Count();
          int numberofcolumns = 2;
          int numberofAllChildren = 0;
             
@@ -174,7 +198,7 @@ namespace JJTrailer.Areas.Admin.Controllers
                     Wholefile += "<p>" + dep.name + "</p></a>";
                     if (dep.children.Count() > 0)
                     {
-                        Wholefile += "<div><div style='background: url(.."+dep.imagepath+") no-repeat;     background-size:100% 100%; width:100%;height:100%'><table>";
+                        Wholefile += "<div><div style='background: url(.."+dep.imagepath+") no-repeat;     background-position:100% 100%; width:100%;height:100%'><table>";
                         if (numberofAllChildren > numberofrows )
                         {
                             Wholefile += "<tr>";
@@ -240,6 +264,17 @@ namespace JJTrailer.Areas.Admin.Controllers
                         Wholefile += "<span><a style='font-weight:lighter;' href='" + dep3.path + "'>";
                         Wholefile += "" + dep3.name + "";
                         Wholefile += "</a></span>";
+                        if (dep3.children != null)
+                        {
+                            Wholefile += "<ul>";
+                            foreach (shortDepartmentMenu dep4 in dep3.children)
+                            {
+                                 Wholefile += "<li><a style='font-weight:lighter;' href='" + dep4.path + "'>";
+                                 Wholefile += "[" + dep4.name + "]";
+                                 Wholefile += "</a></li>";   
+                            }
+                            Wholefile += "</ul>";
+                        }
                     }
                 Wholefile += "<p></p>";
 

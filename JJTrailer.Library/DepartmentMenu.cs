@@ -11,7 +11,7 @@ namespace JJTrailer.Library
     {
         public Guid ID { get; set; }
         public Guid DepartmentID { get; set; }
-        
+  
         [Index("Order", IsUnique = true)]
         public int Order { get; set; }
         public string ImagePath { get; set; }
