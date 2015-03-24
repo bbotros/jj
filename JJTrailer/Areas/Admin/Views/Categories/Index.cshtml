@@ -4,11 +4,81 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catalog>Categories</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using(Html.BeginForm("Index","Categories",FormMethod.Post))
+{<div class="row">
+    <div class="col-md-2">
+        <p>Enter search term:</p>
+    </div>
+     <div class="col-md-4">
+         <input type="search" class="form-control" name="searchterm" />
+         
+       <label>Search filtered result <input type="checkbox"  name="filtered" checked /> </label> 
+     </div>
+     <div class="col-md-4">
+         <button class="form-control">Submit</button>
+     </div>
+    </div>
+   <div class="row">
+        <p>Filter by:</p>
+        <div class="col-md-2">
+            <p>Department Type</p>
+            <select id="DepartmentType" name="DepartmentType" class="form-control" size="5">
+                @foreach (var item in Enum.GetValues(ViewBag.DepartmentType))
+                {
+                    if (ViewBag.select1 != null && ViewBag.select1 == Enum.GetName(ViewBag.DepartmentType, item))
+                    {
+                    <option selected value=@item>@Enum.GetName(ViewBag.DepartmentType, item)</option>}
+                    else
+                    {
+                        <option value=@item>@Enum.GetName(ViewBag.DepartmentType, item)</option>
+                    }
+
+                }
+            </select>
+        </div>
+        <div class="col-md-4">
+            <p>Department</p>
+            <select id="Department" name="Department" class="form-control " size="5">
+                @foreach (var item in ViewBag.Department)
+                {
+                    if (ViewBag.select2 != null && ViewBag.select2 == item.ID.ToString())
+                    {
+                        <option selected value=@item.ID>@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value=@item.ID>@item.Name</option>
+                    }
+
+                }
+            </select>
+
+        </div>
+        <div class="col-md-4">
+            <p>Parent Categories</p>
+            <select id="ParentCategories" name="ParentCategories" class="form-control " size="5">
+                <option value=null>--Reset--</option>
+                @foreach (var item in ViewBag.ParentCategories)
+                {
+                    if (ViewBag.select3 != null && ViewBag.select3 == item.ID.ToString())
+                    {
+                        <option selected value=@item.ID>@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value=@item.ID>@item.Name</option>
+                    }
+
+                }
+            </select>
+        </div>
+    </div>
+
 <table class="table">
     <tr>
         <th>
@@ -32,7 +102,14 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CategoryID)
+            @if (item.CategoryID != null)
+            {
+                var tmp=ViewBag.categories as List<JJTrailer.Library.Category>;
+                
+                
+                @Html.DisplayFor(modelItem => tmp.Find(s=>s.ID==item.CategoryID).Name)
+            }
+
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
@@ -43,3 +120,61 @@
 }
 
 </table>
+
+
+}   
+<nav>
+    <ul class="pagination">
+        @for (int i = 0; i < ViewBag.numberofpages; i++)
+        {
+
+
+            if ((i + 1) == ViewBag.currentpage)
+            {
+
+                <li class="active"><a name="pagelink" href=@Url.Action("Index", new { currentpage = (i + 1) })>@(i + 1)</a></li>
+            }
+            else
+            {
+
+                <li><a name="pagelink" href=@Url.Action("Index", new { currentpage = (i + 1) })>@(i + 1)</a></li>
+            }
+
+        }
+
+
+
+    </ul>
+
+
+
+</nav>
+
+
+
+
+
+@section scripts{
+<script>
+    $('#DepartmentType').on('change', function (Evenet) {
+        var val = $('#DepartmentType').val();
+        console.log(val);
+       this.form.submit();
+    });
+    $('#Department').on('change', function (Evenet) {
+        var val = $('#Department').val();
+        console.log(val);
+        this.form.submit();
+    });
+    $('#ParentCategories').on('change', function (Evenet) {
+        var val = $('#ParentCategories').val();
+        console.log(val);
+        this.form.submit();
+    });
+    $('#pagelink').on('click', function () {
+        var val = $('#pagelink').val();
+        console.log(val);
+        this.form.submit();
+    });
+</script>    
+    }
