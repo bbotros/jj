@@ -42,8 +42,8 @@
       <Objects>
         <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
           <Destination Path="" />
-          <Object Type="DbFullSql">
-            <PreSource Path="Data Source=%28LocalDb%29\v11.0%3bAttachDbFilename=|DataDirectory|\aspnet-JJTrailer-20150303085543.mdf%3bInitial Catalog=aspnet-JJTrailer-20150303085543%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+          <Object Type="DbFullSql" Enabled="False">
+            <PreSource Path="Server=.\SQLEXPRESS%3bInitial Catalog=JJTrailer%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
             <Source Path="obj\Release\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
           </Object>
         </ObjectGroup>
@@ -1828,7 +1828,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties json_2sample_1json__JSONSchema="http://json-schema.org/card" json_2Sample2_1json__JSONSchema="http://json-schema.org/draft-04/schema" />
+      <UserProperties json_2Sample2_1json__JSONSchema="http://json-schema.org/draft-04/schema" json_2sample_1json__JSONSchema="http://json-schema.org/card" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
