@@ -35,7 +35,30 @@
             </div>
         </div>
     </div>
-    <!--Frontpage-->
+ 
+    <!--Trailers-->
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne2">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsone2" aria-expanded="false" aria-controls="collapseone2">
+                    Trailers
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne2">
+            <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked">
+                    <li>@Html.ActionLink("Trailers", "Index", "Trailers", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Custom Trailers", "Index", "CustomTrailers", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Specifications", "Index", "specifications", new { area = "Admin" }, null)</li>
+                    <li>@Html.ActionLink("Options", "Index", "Options", new { area = "Admin" }, null)</li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+      <!--Frontpage-->
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingTwo">
             <h4 class="panel-title">

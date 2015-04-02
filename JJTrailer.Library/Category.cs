@@ -21,6 +21,8 @@ namespace JJTrailer.Library
         public virtual Department department { get; set; }
         public virtual ICollection<Category> SubCategories{get;set;}
         public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Trailer> Trailers { get; set; }
+
         public  ICollection<ImageLib> CategoryImage { get; set; }
     }
 }

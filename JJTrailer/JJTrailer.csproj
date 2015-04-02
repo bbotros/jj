@@ -40,13 +40,6 @@
     <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
     <PublishDatabaseSettings>
       <Objects>
-        <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
-          <Destination Path="" />
-          <Object Type="DbFullSql" Enabled="False">
-            <PreSource Path="Server=.\SQLEXPRESS%3bInitial Catalog=JJTrailer%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
-            <Source Path="obj\Release\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
-          </Object>
-        </ObjectGroup>
       </Objects>
     </PublishDatabaseSettings>
   </PropertyGroup>
@@ -202,15 +195,19 @@
     <Compile Include="Areas\Admin\Controllers\CareersController.cs" />
     <Compile Include="Areas\Admin\Controllers\CarouselsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomTrailersController.cs" />
     <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentMenusController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ImageLibsController.cs" />
     <Compile Include="Areas\Admin\Controllers\JobCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\JobLocationsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OptionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ResumesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SpecificationsController.cs" />
     <Compile Include="Areas\Admin\Controllers\STLfilemanagersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TrailersController.cs" />
     <Compile Include="Areas\Admin\Models\Default.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
@@ -279,6 +276,10 @@
     <Compile Include="Migrations\201503221914297_categories.cs" />
     <Compile Include="Migrations\201503221914297_categories.Designer.cs">
       <DependentUpon>201503221914297_categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504020210365_trailers.cs" />
+    <Compile Include="Migrations\201504020210365_trailers.Designer.cs">
+      <DependentUpon>201504020210365_trailers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -667,6 +668,26 @@
     <Content Include="Areas\Admin\Views\STLfilemanagers\threejsCanvas.cshtml" />
     <Content Include="Areas\Admin\Views\STLfilemanagers\threejCanvas.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\threejCanvas.cshtml" />
+    <Content Include="Areas\Admin\Views\Trailers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Trailers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Trailers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Trailers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Trailers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomTrailers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomTrailers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomTrailers\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomTrailers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomTrailers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Specifications\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Specifications\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Specifications\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Specifications\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Specifications\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Options\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Options\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Options\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Options\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Options\Index.cshtml" />
     <None Include="Properties\PublishProfiles\file.pubxml" />
     <None Include="Properties\PublishProfiles\new.jjtrailer.com.pubxml" />
     <None Include="Properties\PublishProfiles\s2.pubxml" />
@@ -1803,6 +1824,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503221914297_categories.resx">
       <DependentUpon>201503221914297_categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504020210365_trailers.resx">
+      <DependentUpon>201504020210365_trailers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

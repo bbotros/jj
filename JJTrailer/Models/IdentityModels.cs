@@ -59,5 +59,13 @@ namespace JJTrailer.Models
         public System.Data.Entity.DbSet<JJTrailer.Library.DepartmentMenu> DepartmentMenus { get; set; }
 
         public System.Data.Entity.DbSet<JJTrailer.Library.STLfilemanager> STLfilemanagers { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.Trailer> Trailers { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.CustomTrailer> CustomTrailers { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.Specifications> Specifications { get; set; }
+
+        public System.Data.Entity.DbSet<JJTrailer.Library.Options> Options { get; set; }
     }
 }
